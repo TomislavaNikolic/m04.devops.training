@@ -13,8 +13,8 @@ blocks:
             - checkout
             - cd 2-docker-build/
             - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
-            - 'docker build -t semaphore_test:${SEMAPHORE_WORKFLOW_ID} .'
+            - 'docker build -it semaphore_test:${SEMAPHORE_WORKFLOW_ID} .'
             - 'docker tag semaphore_test:${SEMAPHORE_WORKFLOW_ID} "$DOCKER_USERNAME"/semaphore_test'
-            - docker push -t "$DOCKER_USERNAME"/semaphore_test
+            - docker push -it "$DOCKER_USERNAME"/semaphore_test
       secrets:
         - name: docker
