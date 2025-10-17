@@ -15,6 +15,6 @@ blocks:
             - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
             - 'docker build -t semaphore_test:${SEMAPHORE_WORKFLOW_ID} .'
             - 'docker tag semaphore_test:${SEMAPHORE_WORKFLOW_ID} "$DOCKER_USERNAME"/semaphore_test:${SEMAPHORE_WORKFLOW_ID}'
-            - docker push "$DOCKER_USERNAME"/semaphore_test
+            - 'docker push "$DOCKER_USERNAME"/semaphore_test:${SEMAPHORE_WORKFLOW_ID}'
       secrets:
         - name: docker
