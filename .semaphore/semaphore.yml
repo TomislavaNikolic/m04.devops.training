@@ -10,6 +10,7 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
+            - checkout
             - cd 2-docker-build/
             - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
             - docker build -t hello-app .
