@@ -17,4 +17,4 @@ blocks:
             - 'docker tag semaphore_test:${SEMAPHORE_WORKFLOW_ID} "$DOCKER_USERNAME"/semaphore_test'
             - docker push -t "$DOCKER_USERNAME"/semaphore_test
       secrets:
-        - name: Dockerhub
+        - name: docker
